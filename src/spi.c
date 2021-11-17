@@ -51,16 +51,7 @@ uint32_t spi_master_write(uint32_t spi_periph, uint8_t value)
 
 void spi_data_transmit(uint32_t spi_periph, uint8_t *data, uint32_t length)
 {
-    // uint16_t count = 0;
-    // while(count < length) {
-    //     while(RESET == spi_i2s_flag_get(spi_periph, SPI_FLAG_TBE));
-    //     uint16_t x = data[count];
-    //     spi_i2s_data_transmit(spi_periph, x);
-    //     //while(spi_i2s_flag_get(SPI0, SPI_FLAG_TRANS));
-    //     count++;
-    // }
-
-    uint32_t count = 0;
+   uint32_t count = 0;
     while(count < length) {
         spi_master_write(spi_periph, data[count++]);
     }
@@ -68,29 +59,8 @@ void spi_data_transmit(uint32_t spi_periph, uint8_t *data, uint32_t length)
 
 void spi_data_receive(uint32_t spi_periph, uint8_t *data, uint32_t length)
 {
-    // uint16_t count = 0;
-    // while(count < length) {
-    //     while(RESET == spi_i2s_flag_get(spi_periph, SPI_FLAG_RBNE));
-    //     uint16_t x = spi_i2s_data_receive(spi_periph);
-    //     data[count] = (uint8_t)x;
-    //     //while(spi_i2s_flag_get(SPI0, SPI_FLAG_TRANS));
-    //     count++;
-    // }
-
     uint32_t count = 0;
     while(count < length) {
         data[count++] = spi_master_write(spi_periph, 0xFF);
     }
-
-    // uint32_t count = 0;
-    // while(count < length) {
-    //     uint16_t timeout = 0;
-    //     while((RESET == spi_i2s_flag_get(spi_periph, SPI_FLAG_RBNE)) && (timeout++ < 1000));
-    //     if(timeout >= 1000) {
-    //         return;
-    //     }
-    //     else {
-    //         data[count++] = spi_i2s_data_receive(spi_periph);
-    //     }
-    // }
 }
