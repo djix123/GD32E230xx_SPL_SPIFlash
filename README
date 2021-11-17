@@ -8,3 +8,8 @@ Implemented using:
 i.   GD32F23x Firmware Library (Standard Peripheral Library - SPL)
 ii.  PlatformIO GD32 - https://github.com/CommunityGD32Cores/platform-gd32
 iii. LittleFS - https://github.com/littlefs-project/littlefs
+
+Note:
+    w25qxx.h / w25qxx.c borrowed from WeActTC's MSC_SPIFlash implementation for their BluePill-Plus board (https://github.com/WeActTC/BluePill-Plus/tree/master/SDK/STM32F103C8T6/HAL/MSC_SPIFlash)
+
+    (The WeActTC boards are excellent - high quality with good support examples)
