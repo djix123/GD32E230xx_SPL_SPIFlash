@@ -117,9 +117,6 @@ int main(void)
     // remember the storage is not updated until the file is closed successfully
     lfs_file_close(&lfs, &file);
 
-    // release any resources we were using
-    lfs_unmount(&lfs);
-
     // print the boot count
     printf("boot_count: %ld\r\n", boot_count);
 
@@ -142,6 +139,10 @@ int main(void)
 
         printf("Loop count = %ld\r\n", loop_count++);
     }
+
+    // release any resources we were using (knowing we'll never get here!)
+    lfs_unmount(&lfs);
+
 #endif
 }
 
