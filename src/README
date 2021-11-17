@@ -1,0 +1,10 @@
+GD32E230xx_SPL_SPIFlash
+=======================
+
+Demonstration of connecting a GigaDevice GD32E230F8 (http://www.gd32mcu.com/en/download/0?kw=GD32E2) to a Winbond W25Q64FV using SPI and LittleFS for a filesystem
+
+Implemented using:
+
+i.   GD32F23x Firmware Library (Standard Peripheral Library - SPL)
+ii.  PlatformIO GD32 - https://github.com/CommunityGD32Cores/platform-gd32
+iii. LittleFS - https://github.com/littlefs-project/littlefs
