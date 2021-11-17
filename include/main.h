@@ -14,10 +14,3 @@
 void systick_config(void);
 void delay_1ms(uint32_t count);
 
-void rcu_config(void);
-void gpio_config(void);
-void spi_config(void);
-
-void com_gpio_init(void);
-void com_usart_init(void);
-
